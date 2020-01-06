@@ -1,4 +1,4 @@
-# WorldOfWarcraft_Webpage
+# Coding Challenge for EagleDream Technologies
 ## Webpage that pulls data from the World of Warcraft API
 
 
@@ -29,3 +29,4 @@ I have made this website as responsive as I could.
 I have included the original CSS stylesheet that I was using before I converted to using the stylesheet that was compiled from SCSS.  
 This is for your reference and You can also use this file in place of the new one if you change the path in the link tag in index.html.
 
+Link: https://people.rit.edu/~bxw5869/EagleDream/
