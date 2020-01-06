@@ -3,7 +3,7 @@ Webpage that pulls data from the World of Warcraft API
 
 
 Extra technologies used
-  -Sass
+*Sass
 *MDBootstrap
 *jQuery
 
