@@ -1,0 +1,199 @@
+
+$white: rgb(255,255,255);
+$bg_color_light: rgba(11, 18, 47, .65);
+$bg_color_dark: rgba(11, 18, 47, .9) !important; 
+
+
+@mixin changeFontSize($font) {
+    font-size: $font !important;
+}
+
+@mixin changeMargins($top,$bottom){
+    margin-top: $top !important;
+    margin-bottom: $bottom !important;
+}
+
+@mixin changeMarginTop($top){
+    margin-top: $top !important;
+}
+
+@mixin changeMarginBottom($bottom){
+    margin-bottom: $bottom !important;
+}
+
+
+%shadow{
+    /*Adds a lighter border color to the container*/
+    border-radius: 1px;
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.3);  
+}
+
+
+/*HTML body tag*/
+body{ 
+    background-image: url("../img/background.png");
+    background-size: 100%;
+}
+
+/*Div that contains the search fields and search button*/
+#fields{ 
+    @include changeMargins(30px,35px);
+}
+
+/*The logo*/
+#logo{ 
+    width: 237px;
+}
+
+/*Search fields and button*/
+#form1,#form2,#searchButton{ 
+    @include changeMarginTop(20px);
+    width: 25%;
+}
+
+/*Turns the input placeholder text white*/
+::placeholder { 
+    color: $white !important;
+}
+
+/*Bootstrap form class*/
+.form-control{ 
+    @include changeFontSize(12px);
+    border-radius: 0 !important;
+    border-color: darkkhaki;
+    background-color: #1b2735;
+}
+
+/*The main container for all of the content*/
+#data_container{ 
+    background-color: $bg_color_light;
+
+    /*Adds a lighter border color*/
+    @extend %shadow;
+}
+
+/*Container for all of the character stats*/
+.stats{ 
+
+    /*Adds a lighter border color*/
+    @extend %shadow;
+
+    background-color: $bg_color_dark; 
+    @include changeMargins(40px,20px);
+}
+
+/*The columns inside of the stats container*/
+.stat_columns{
+    @include changeMargins(15px,15px);
+    color: $white;
+}
+
+/*Puts spacing in between the values that get displayed so that they're on opposite ends of div*/
+.test{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Headers on the left side of container*/
+.left-aligned-headers{
+    @include changeFontSize(15px);
+}
+
+/*Styles for left-aligned text and right-aligned text*/
+.left-aligned-titles,.right-aligned-stats{
+    @include changeFontSize(13px);
+    @include changeMarginBottom(5px);
+}
+
+/*Styles for the last left-aligned text element in its section*/
+.last-left{
+    @include changeFontSize(13px);
+    @include changeMarginBottom(25px);
+}
+
+/*Changes left-aligned text to golden color*/
+.left-aligned-titles,.last-left{
+    color: #d7a12e;
+}
+
+/*Gives appropriate text a green color*/
+.green-text{
+    color: #1fb0a6;
+}
+
+/*Div that contains the image button*/
+#myButton{ 
+    @include changeMarginTop(20px);
+    cursor: pointer;
+}
+
+/*Bootstrap modal classes*/
+.modal-header,.modal-body{ 
+    background-color: $bg_color_dark; 
+}
+
+/*Bootstrap modal header and the modal close button*/
+.modal_header,#closeButton{
+    color: $white;
+}
+
+
+
+/*
+*
+*   MEDIA QUERIES
+*
+*/
+
+/*Changes the width and margin of the input elements and adds a top border to character profile container for bigger screens*/
+@media only screen and (min-width: 768px) {
+    #form1,#form2,#searchButton{
+        @include changeMarginTop(20px);
+        width: 25%;
+    }
+
+    /*Container for the character profile info such as health, battlegroup, etc.*/
+    #profile{
+        border-left: 1px solid white;
+    }
+}
+
+/*Changes the width and margin of the input elements for medium sized screens*/
+@media only screen and (min-width: 600px) and (max-width: 767px){
+    #form1,#form2,#searchButton{
+        @include changeMarginTop(20px);
+        width: 50%;
+    }
+}
+
+/*Changes the width and margin of the input elements and adds a top border to character profile container for smaller screens*/
+@media only screen and (max-width: 599px) {
+    #form1,#form2,#searchButton{
+        @include changeMarginTop(20px);
+        width: 75%;
+    }
+    
+    /*Container for the character profile info such as health, battlegroup, etc.*/
+    #profile{ 
+        border-top: 1px solid white;
+    }
+}
+
+/*Makes the font size for all of the text smaller for this specific range*/
+@media only screen and (min-width: 400px) and (max-width: 1024px){
+    .left-aligned-titles,.last-left,.right-aligned-stats{
+        @include changeFontSize(11px);
+    }
+
+    h2{
+        @include changeFontSize(1.3em);
+    }
+}
+
+/*Makes the button image smaller when the screen gets bigger*/
+@media only screen and (max-width: 1000px){
+    #imgButton{
+        width: 45px;
+        height: 45px;
+    }
+}

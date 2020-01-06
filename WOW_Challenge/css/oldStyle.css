@@ -1,0 +1,155 @@
+/*
+*
+*   This is the CSS file that contains the original styles before I switched to using Sass
+*   This file can be used in place of the 'styles.css' file if you change the link path in 'index.html'
+*
+*/
+
+
+body{ /*HTML body tag*/
+    background-image: url("../img/background.png");
+    background-size: 100%;
+}
+
+#fields{ /*Div that contains the search fields and search button*/
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+#logo{ /*The logo*/
+    width: 237px;
+}
+
+#form1,#form2,#searchButton{ /*Search fields and button*/
+    margin-top: 20px !important;
+    width: 25%;
+}
+
+::placeholder { /*Turns the input placeholder text white*/
+    color: white !important;
+}
+
+.form-control{ /*Bootstrap form class*/
+    font-size: 12px !important;
+    border-radius: 0 !important;
+    border-color: darkkhaki;
+    background-color: #1b2735;
+}
+
+#data_container{ /*The main container for all of the content*/
+    background-color: rgba(11, 18, 47, .65);
+
+    /*Adds a lighter border color*/
+    border-radius: 1px;
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.3);  
+}
+
+.stats{ /*Container for all of the character stats*/
+
+    /*Adds a lighter border color*/
+    border-radius: 7px;
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.3);
+
+    background-color: rgba(11, 18, 47, .9); 
+    margin-top: 40px; 
+    margin-bottom: 20px;
+}
+
+.stat_columns{/*The columns inside of the stats container*/
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.test{/*Puts spacing in between the values that get displayed so that they're on opposite ends of div*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-aligned-headers{/*Headers on the left side of container*/
+    font-size: 15px;
+}
+
+.left-aligned-titles,.right-aligned-stats{/*Styles for left-aligned text and right-aligned text*/
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.last-left{/*Styles for the last left-aligned text element in its section*/
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.left-aligned-titles,.last-left{/*Changes left-aligned text to golden color*/
+    color: #d7a12e;
+}
+
+.green-text{/*Gives appropriate text a green color*/
+    color: #1fb0a6;
+}
+
+#myButton{ /*Div that contains the image button*/
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.modal-header,.modal-body{ /*Bootstrap modal classes*/
+    background-color: rgba(11, 18, 47, .9) !important; 
+}
+
+.modal_header,#closeButton{/*Bootstrap modal header and the modal close button*/
+    color: white;
+}
+
+
+
+/*
+*
+*   MEDIA QUERIES
+*
+*/
+@media only screen and (min-width: 768px) {/*Changes the width and margin of the input elements and adds a top border to character profile container for bigger screens*/
+    #form1,#form2,#searchButton{
+        margin-top: 20px !important;
+        width: 25%;
+    }
+
+    #profile{/*Container for the character profile info such as health, battlegroup, etc.*/
+        border-left: 1px solid white;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 767px){/*Changes the width and margin of the input elements for medium sized screens*/
+    #form1,#form2,#searchButton{
+        margin-top: 20px !important;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 599px) {/*Changes the width and margin of the input elements and adds a top border to character profile container for smaller screens*/
+    #form1,#form2,#searchButton{
+        margin-top: 20px !important;
+        width: 75%;
+    }
+    
+    #profile{ /*Container for the character profile info such as health, battlegroup, etc.*/
+        border-top: 1px solid white;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 1024px){/*Makes the font size for all of the text smaller for this specific range*/
+    .left-aligned-titles,.last-left,.right-aligned-stats{
+        font-size: 11px !important;
+    }
+
+    h2{
+        font-size: 1.3em !important;
+    }
+}
+
+@media only screen and (max-width: 1000px){/*Makes the button image smaller when the screen gets bigger*/
+    #imgButton{
+        width: 45px;
+        height: 45px;
+    }
+}

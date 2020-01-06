@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>World Of Warcraft</title>
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--MDBoostrap CSS-->
+        <link href="MDBootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="MDBootstrap/css/mdb.css" rel="stylesheet">
+        <link href="MDBootstrap/css/modules/animations-extended.min.css" rel="stylesheet">
+        <!--Personal CSS-->
+        <link href="css/styles.css" rel="stylesheet">
+
+        <!--jQuery-->
+        <script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+        <!--Personal JS-->
+        <script src="js/wow_api.js"></script>
+        <!--MDBoostrap JS-->
+        <script src="MDBootstrap/js/bootstrap.min.js"></script>
+        
+    </head>
+
+    <body>
+
+        <!--This container is for the search input fields and the search button-->
+        <div id="fields" class="container-fluid">
+            <div class="row">
+                <div class="container">
+
+                    <!--Logo that I got from the PSD file-->
+                    <div class="row justify-content-center" >
+                        <img src="img/edt_logo.png" alt="Logo" title="EagleDream Logo" id="logo">
+                    </div>
+
+                    <!--Search fields and button-->
+                    <div class="row justify-content-center">
+                        <input type="text" id="form1" class="form-control" placeholder="Character Name" name="char_name">
+                    </div>
+                    <div class="row justify-content-center">
+                        <input type="text" id="form2" class="form-control" placeholder="Realm Name" name="realm">
+                    </div>
+                    <div class="row justify-content-center">
+                        <button type="button" id="searchButton" class="btn btn-default btn-sm">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--This container will be filled with the all of the data that is gotten from the API-->
+        <div class="container-fluid" id="data_container">
+            <div class="row">
+                <div class="col-sm-1">
+                    <div class="container-fluid">
+                    </div>
+                </div>
+
+                <!--Div for character stats-->
+                <div class="col-lg-6">
+                    <div class="container stats">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="container stat_columns">
+                                    <div class="row" id="ROW_1">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="container stat_columns">
+                                    <div class="row" id="ROW_2">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4" id="profile">
+                                <div class="container stat_columns" id="ROW_3">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Div for item information-->
+                <div class="col-lg-4">
+                    <div class="container stats">
+                        <div class="row">
+                            
+                            <div class="col-lg-12">
+                                <div class="container stat_columns">
+                                    <div class="row" id="ROW_4">
+                                        
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+                    </div>
+                </div>
+
+                <!--Div that contains the "button"-->
+                <div class="col-lg-1">
+                    <div class="container">
+
+                        <!--This image acts a button that makes the container disappear once clicked-->
+                        <div id="myButton"><img src="img/button.png" id="imgButton"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Modal for the bonus item stats-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title modal_header" id="myModalLabel">Item Buy/Sell Price and Required Level</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeButton">
+                            <a data-toggle="modal" data-target="#myModal">
+                            <span aria-hidden="true">&times;</span>
+                            </a>
+                        </button>
+                    </div>
+                    <div class="modal-body"></div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
